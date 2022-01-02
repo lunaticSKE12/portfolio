@@ -12,6 +12,8 @@ import {
   TitleContent,
   UtilityList,
   Img,
+  Browser,
+  Circle,
 } from './ProjectsStyles';
 import {
   Section,
@@ -28,6 +30,11 @@ const Projects = () => (
       {projects.map(
         ({ id, image, title, description, tags, source, visit }) => (
           <BlogCard key={id}>
+            <Browser>
+              <Circle style={{ backgroundColor: '#FF0000' }}></Circle>
+              <Circle style={{ backgroundColor: '#F6BB42' }}></Circle>
+              <Circle style={{ backgroundColor: '#8CC152' }}></Circle>
+            </Browser>
             <Img src={image} />
             <TitleContent>
               <HeaderThree title>{title}</HeaderThree>

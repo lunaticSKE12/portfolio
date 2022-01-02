@@ -76,7 +76,6 @@ export const Img = styled.img`
   height: auto;
   object-fit: cover;
   overflow: hidden;
-
   position: absolute;
 `;
 

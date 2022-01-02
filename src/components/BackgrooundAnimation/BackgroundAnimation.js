@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Right, Img, Svg } from './BackgroundStyle';
 const BackgroundAnimation = () => (
-  <div>
-    <svg
+  <Right>
+    <Svg
       className="BgAnimation__svg"
       viewBox="0 0 602 602"
       fill="none"
@@ -358,8 +358,9 @@ const BackgroundAnimation = () => (
           <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
         </linearGradient>
       </defs>
-    </svg>
-  </div>
+    </Svg>
+    <Img src={'/images/people.png'} />
+  </Right>
 );
 
 export default BackgroundAnimation;
