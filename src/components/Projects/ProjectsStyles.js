@@ -6,6 +6,8 @@ export const Browser = styled.div`
   display: flex;
   align-items: center;
   border-radius: 10px 10px 0 0;
+  position: sticky;
+  z-index: 2;
 `;
 
 export const Circle = styled.div`
@@ -16,11 +18,17 @@ export const Circle = styled.div`
   background-color: #fff;
 `;
 
+export const P = styled.div`
+  width: 100%;
+  height: 20vh;
+  overflow: hidden;
+`;
+
 export const Img = styled.img`
   width: 100%;
-  height: 100%;
   object-fit: cover;
   overflow: hidden;
+  transition: all 10s ease;
 `;
 
 export const GridContainer = styled.section`
@@ -45,6 +53,9 @@ export const BlogCard = styled.div`
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
+  }
+  &:hover ${Img} {
+    transform: translateY(-80%);
   }
 `;
 export const TitleContent = styled.div`

@@ -14,6 +14,7 @@ import {
   Img,
   Browser,
   Circle,
+  P,
 } from './ProjectsStyles';
 import {
   Section,
@@ -35,7 +36,9 @@ const Projects = () => (
               <Circle style={{ backgroundColor: '#F6BB42' }}></Circle>
               <Circle style={{ backgroundColor: '#8CC152' }}></Circle>
             </Browser>
-            <Img src={image} />
+            <P>
+              <Img src={image} />
+            </P>
             <TitleContent>
               <HeaderThree title>{title}</HeaderThree>
               <Hr />
