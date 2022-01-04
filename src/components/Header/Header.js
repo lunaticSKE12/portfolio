@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
-
+import { FaLine } from 'react-icons/fa';
 import {
   Container,
   Div1,
@@ -56,6 +56,9 @@ const Header = () => (
       </SocialIcons>
       <SocialIcons href="https://instagram.com">
         <AiFillInstagram size="3rem" />
+      </SocialIcons>
+      <SocialIcons href="https://instagram.com">
+        <FaLine size="3rem" />
       </SocialIcons>
     </Div3>
   </Container>
