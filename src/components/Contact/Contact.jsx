@@ -11,13 +11,43 @@ import {
   TextArea,
   Button,
 } from './ContactStyle';
-import { FaLine } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
+import { useState } from 'react';
 
 const Contact = () => {
   const formRef = useRef();
+  const [done, setDone] = useState(false);
+  const [nameInput, setNameInput] = useState('');
+  const [subjectInput, setSubjectInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [messageInput, setMessageInput] = useState('');
 
-  const hendleSubmit = (e) => {
+  const handleData = (e) => {
     e.preventDefault();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (nameInput && subjectInput && emailInput && messageInput) {
+      // emailjs
+      //   .sendForm(
+      //     'service_qj2euyq',
+      //     'template_082qdil',
+      //     formRef.current,
+      //     'user_iEbq76phkJIa0yyXV9TID'
+      //   )
+      //   .then(
+      //     (result) => {
+      //       console.log(result.text);
+      //       setDone(true);
+      //     },
+      //     (error) => {
+      //       console.log(error.text);
+      //     }
+      //   );
+    } else {
+      setDone(false);
+    }
   };
   return (
     <C>
@@ -45,11 +75,40 @@ const Contact = () => {
             ref={formRef}
             onSubmit={handleSubmit}
           >
-            <Input type="text" placeholder="Name" name="user_name" />
-            <Input type="text" placeholder="Subject" name="user_subject" />
-            <Input type="text" placeholder="Email" name="user_email" />
-            <TextArea rows="5" placeholder="Message" name="message" />
+            <Input
+              type="text"
+              placeholder="Name *"
+              name="user_name"
+              value={nameInput}
+              onInput={(e) => setNameInput(e.target.value)}
+            />
+            <Input
+              type="text"
+              placeholder="Subject *"
+              name="user_subject"
+              value={subjectInput}
+              onInput={(e) => setSubjectInput(e.target.value)}
+            />
+            <Input
+              type="text"
+              placeholder="Email *"
+              name="user_email"
+              value={emailInput}
+              onInput={(e) => setEmailInput(e.target.value)}
+            />
+            <TextArea
+              rows="5"
+              placeholder="Message *"
+              name="message"
+              value={messageInput}
+              onInput={(e) => setMessageInput(e.target.value)}
+            />
             <Button>Submit</Button>
+            {done ? (
+              'Thank you...'
+            ) : (
+              <p style={{ color: 'red' }}>Filed all requirement field.</p>
+            )}
           </form>
         </CRight>
       </CWrapper>

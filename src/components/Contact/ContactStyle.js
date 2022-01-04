@@ -57,6 +57,7 @@ export const TextArea = styled.textarea`
   margin: 10px 0;
   font-size: 14px;
   padding-left: 10px;
+  padding-top: 10px;
 `;
 
 export const Button = styled.button`
@@ -66,4 +67,5 @@ export const Button = styled.button`
   color: white;
   font-weight: 500;
   cursor: pointer;
+  margin: 0 15px 15px 0;
 `;
