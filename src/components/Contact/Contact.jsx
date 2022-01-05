@@ -12,7 +12,8 @@ import {
   Button,
 } from './ContactStyle';
 import emailjs from 'emailjs-com';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ThemeContext } from '../../pages/context';
 
 const Contact = () => {
   const formRef = useRef();
@@ -21,30 +22,28 @@ const Contact = () => {
   const [subjectInput, setSubjectInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [messageInput, setMessageInput] = useState('');
-
-  const handleData = (e) => {
-    e.preventDefault();
-  };
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (nameInput && subjectInput && emailInput && messageInput) {
-      // emailjs
-      //   .sendForm(
-      //     'service_qj2euyq',
-      //     'template_082qdil',
-      //     formRef.current,
-      //     'user_iEbq76phkJIa0yyXV9TID'
-      //   )
-      //   .then(
-      //     (result) => {
-      //       console.log(result.text);
-      //       setDone(true);
-      //     },
-      //     (error) => {
-      //       console.log(error.text);
-      //     }
-      //   );
+      emailjs
+        .sendForm(
+          'service_qj2euyq',
+          'template_082qdil',
+          formRef.current,
+          'user_iEbq76phkJIa0yyXV9TID'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setDone(true);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     } else {
       setDone(false);
     }
@@ -79,12 +78,14 @@ const Contact = () => {
               type="text"
               placeholder="Name *"
               name="user_name"
+              style={{ backgroundColor: darkMode && '#333' }}
               value={nameInput}
               onInput={(e) => setNameInput(e.target.value)}
             />
             <Input
               type="text"
               placeholder="Subject *"
+              style={{ backgroundColor: darkMode && '#333' }}
               name="user_subject"
               value={subjectInput}
               onInput={(e) => setSubjectInput(e.target.value)}
@@ -92,6 +93,7 @@ const Contact = () => {
             <Input
               type="text"
               placeholder="Email *"
+              style={{ backgroundColor: darkMode && '#333' }}
               name="user_email"
               value={emailInput}
               onInput={(e) => setEmailInput(e.target.value)}
@@ -99,6 +101,7 @@ const Contact = () => {
             <TextArea
               rows="5"
               placeholder="Message *"
+              style={{ backgroundColor: darkMode && '#333' }}
               name="message"
               value={messageInput}
               onInput={(e) => setMessageInput(e.target.value)}
