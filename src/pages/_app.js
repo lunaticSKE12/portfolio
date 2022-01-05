@@ -1,7 +1,7 @@
-import { ThemeProvider } from '../context';
 import Theme from '../styles/theme';
+import { ThemeProvider } from './context';
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <>
       <ThemeProvider>
@@ -11,4 +11,5 @@ export default function App({ Component, pageProps }) {
       </ThemeProvider>
     </>
   );
-}
+};
+export default App;

@@ -9,11 +9,19 @@ import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 import Contact from '../components/Contact/Contact';
 import Toggle from '../components/Toggle/Toggle';
-import { ThemeProvider } from '../context';
+import { ThemeContext } from './context';
+import { useContext } from 'react';
 
 const Home = () => {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <div style={{ backgroundColor: 'red', color: 'white' }}>
+    <div
+      style={{
+        backgroundColor: darkMode ? '#222' : 'white',
+        color: darkMode && 'white',
+      }}
+    >
       <Layout>
         <Toggle />
         <Section grid>
