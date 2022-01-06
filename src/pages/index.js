@@ -28,7 +28,7 @@ const Home = () => {
           <Hero />
           <BgAnimation />
         </Section>
-        <Intro />
+        {/* <Intro /> */}
         <Projects />
         <Technologies />
         <Timeline />

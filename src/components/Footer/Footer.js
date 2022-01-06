@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-
 import { SocialIcons } from '../Header/HeaderStyles';
 import {
   CompanyContainer,
@@ -13,10 +12,12 @@ import {
   SocialContainer,
   SocialIconsContainer,
 } from './FooterStyles';
+import Contact from '../Contact/Contact';
 
 const Footer = () => {
   return (
     <FooterWrapper>
+      {/* <Contact /> */}
       <LinkList>
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const C = styled.div`
-  height: 100vh;
+  height: 100%;
   position: relative;
 `;
 
@@ -15,6 +15,11 @@ export const CBg = styled.div`
 export const CWrapper = styled.div`
   padding: 50px;
   display: flex;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    flex-direction: column;
+    padding-top: 0px;
+  }
 `;
 
 export const CLeft = styled.div`

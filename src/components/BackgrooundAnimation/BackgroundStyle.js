@@ -10,6 +10,10 @@ export const Img = styled.img`
   overflow: hidden;
   position: absolute;
   right: 0;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    width: 0;
+  }
 `;
 
 export const Svg = styled.svg`
