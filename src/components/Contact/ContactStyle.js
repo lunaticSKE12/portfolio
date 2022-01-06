@@ -53,14 +53,14 @@ export const Input = styled.input`
   border: none;
   border-bottom: 2px solid black;
   margin: 10px 0;
-  font-size: 14px;
+  font-size: 18px;
   padding-left: 10px;
 `;
 
 export const TextArea = styled.textarea`
   width: 100%;
   margin: 10px 0;
-  font-size: 14px;
+  font-size: 18px;
   padding-left: 10px;
   padding-top: 10px;
 `;
@@ -73,4 +73,21 @@ export const Button = styled.button`
   font-weight: 500;
   cursor: pointer;
   margin: 0 15px 15px 0;
+`;
+
+export const LinkItem = styled.a`
+  transition: 0.3s ease;
+  position: relative;
+  left: 0;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 18px;
+
+  &:hover {
+    color: #59b;
+    left: 6px;
+  }
+`;
+
+export const H1 = styled.h1`
+  font-size: 60px;
 `;

@@ -9,6 +9,7 @@ import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 import Contact from '../components/Contact/Contact';
 import Toggle from '../components/Toggle/Toggle';
+import Up from '../components/Toggle/Up';
 import { ThemeContext } from './context';
 import { useContext } from 'react';
 
@@ -34,6 +35,7 @@ const Home = () => {
         <Timeline />
         <Acomplishments />
         <Contact />
+        <Up />
       </Layout>
     </div>
   );

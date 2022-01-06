@@ -10,6 +10,8 @@ import {
   Input,
   TextArea,
   Button,
+  LinkItem,
+  H1,
 } from './ContactStyle';
 import emailjs from 'emailjs-com';
 import { useState, useContext } from 'react';
@@ -53,15 +55,26 @@ const Contact = () => {
       <CBg></CBg>
       <CWrapper>
         <CLeft>
-          <h1>Let's discuss</h1>
+          <H1>Let's discuss</H1>
           <div className="c-info">
             <CInfoItem>
               <Img src="/images/LINE_APP.png" alt="line app" />
-              @jamesnapongd
+              <LinkItem
+                style={{
+                  color: darkMode && '#fff',
+                }}
+              >
+                @jamesnapongd
+              </LinkItem>
             </CInfoItem>
             <CInfoItem>
               <Img src="/images/email.png" alt="email" className="c-icon" />
-              jamesnapongd@gmail.com
+              <LinkItem
+                href="mailto:jamesnapongd@gmail.com"
+                style={{ color: darkMode && '#fff' }}
+              >
+                jamesnapongd@gmail.com
+              </LinkItem>
             </CInfoItem>
           </div>
         </CLeft>
